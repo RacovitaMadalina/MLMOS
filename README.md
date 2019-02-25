@@ -20,3 +20,11 @@ Adaugam cheia privata RSA, agentului ssh:
 Pentru a testa daca functioneaza: 
       
      ssh -T -y git@github.com
+     
+Pentru a clona repo-ul de git via ssh: 
+
+     git clone git@github.com:RacovitaMadalina/MLMOS.git
+     
+Cheia publica se va afla de asemenea si in:
+
+      ~/.ssh/authorized_keys
