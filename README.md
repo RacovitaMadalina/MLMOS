@@ -28,3 +28,11 @@ Pentru a clona repo-ul de git via ssh:
 Cheia publica se va afla de asemenea si in:
 
       ~/.ssh/authorized_keys
+
+Toate serviciile existente in sistem se gasesc la locatia: /usr/lib/systemd/system
+
+     cd /usr/lib/systemd/system
+     
+Fisierul other_service_functionalities.sh contine comenzile care vor trebuie executate odata cu pornire serviciului. Pentru a-l rula:
+     
+     exec ssh-agent bash | ssh-add /etc/ssh/id_rsa_git | . other_service_functionalities.sh "new hostname"
