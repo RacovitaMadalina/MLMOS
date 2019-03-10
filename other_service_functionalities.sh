@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # setting the hostname for the virtual machine
+sudo su
 hostname="localhost.localdomain"
 
-desired_hostname=$1
-desired_hostname="$1.localdomain"
+desired_hostname="madlina"
+desired_hostname="$desired_hostname.localdomain"
 echo $desired_hostname
 
 echo "HOSTNAME=$desired_hostname" > /etc/sysconfig/network
@@ -27,7 +28,7 @@ mkdir ~/$new_dirname
 cd ~/$new_dirname
 
 #connected to git via ssh
-git clone git@github.com:RacovitaMadalina/MLMOS.git
+exec ssh-agent bash | ssh-add /etc/ssh/id_rsa_git | git clone git@github.com:RacovitaMadalina/MLMOS.git
 
 #executing the script bootstrap.sh
 cd ~/$new_dirname/MLMOS

@@ -73,13 +73,13 @@
 		echo "Failure on setting the SELINUX attribute to enforcing"
 	fi
 	
-	operation_status=disable_auth_pass
-	if $operation_status ; then
-		echo "Authentication is possible now only through ssh keys"
-	else
-		echo "Failure during disabling password_authentication"
-	
-	fi 
+#	operation_status=disable_auth_pass
+#	if $operation_status ; then
+#		echo "Authentication is possible now only through ssh keys"
+#	else
+#		echo "Failure during disabling password_authentication"
+#	
+#	fi 
 
 	operation_status=configure_ipv4_addresses
 	if $operation_status ; then
