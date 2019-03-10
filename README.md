@@ -10,10 +10,13 @@ pentru userul meu de git:
 Cheile nou generate au fost salvate in etc/ssh sub denumirea de id_rsa_git si id_rsa_git.pub
 
 Pornim agentul de ssh prin comanda: 
-      exec ssh-agent bash
+     
+     exec ssh-agent bash
 
 Adaugam cheia privata RSA, agentului ssh: 
+      
       ssh-add /etc/ssh/id_rsa_git
 
 Pentru a testa daca functioneaza: 
+      
       ssh -T -y git@github.com
