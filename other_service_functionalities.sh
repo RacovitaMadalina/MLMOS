@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # setting the hostname for the virtual machine
-sudo su
+# sudo su
 hostname="localhost.localdomain"
 
 desired_hostname="madlina"
