@@ -15,8 +15,8 @@ Pornim agentul de ssh prin comanda:
 
 Adaugam cheia privata RSA, agentului ssh: 
       
-      ssh-add /etc/ssh/id_rsa_git
+     ssh-add /etc/ssh/id_rsa_git
 
 Pentru a testa daca functioneaza: 
       
-      ssh -T -y git@github.com
+     ssh -T -y git@github.com
