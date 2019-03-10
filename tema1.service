@@ -1,0 +1,10 @@
+[Unit]
+Description="Service that should clone a git repo and make some configuration settings"
+After=network.target
+
+[Service]
+Type=single
+ExecStart=/root/MLMOS/other_service_functionalities.sh
+
+[Install]
+WantedBy=multi-user.target
