@@ -27,7 +27,14 @@ Pentru a clona repo-ul de git via ssh:
      
 Cheia publica se va afla de asemenea si in:
 
-      ~/.ssh/authorized_keys
+      ~/.ssh/
+      
+Pentru a copia cheia pe o alta masina se va executa comanda:
+     
+       ssh-copy-id username@remote_host ->>>> ssh-copy-id madalina@192.168.56.101
+    
+Si prin modificarea cheii de PasswordAuthentication = no in fisierul /etc/ssh/sshd_config se va permite conectarea fara parola, 
+daca se doreste conectarea de pe o alta masina virtuala la masina mea, iar cheile RSA public/private in momentul in care se face conexiunea vor face match.
 
 Toate serviciile existente in sistem se gasesc la locatia: /usr/lib/systemd/system
 
