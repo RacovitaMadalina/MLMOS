@@ -36,3 +36,27 @@ Toate serviciile existente in sistem se gasesc la locatia: /usr/lib/systemd/syst
 Fisierul other_service_functionalities.sh contine comenzile care vor trebuie executate odata cu pornire serviciului. Pentru a-l rula:
      
      exec ssh-agent bash | ssh-add /etc/ssh/id_rsa_git | . other_service_functionalities.sh "new hostname"
+     
+Toate serviciile de sistem le gasim prin comanda:
+     
+     cd /usr/lib/systemd/system 
+
+Un serviciu va fi construit dupa urmatoarea structura:
+
+     [Unit] -> description + dependecies
+     [Service]
+          type: single/forking/dbas etc
+          ExecStart: path to binary file that we want to execute
+     [Install]
+          WantedBy: multi-user.target/desktop.target
+          
+Dupa ce cream nnoul serviciu, acesta nu va fi recunoscut din prima. De aceea trebuie sa rulam urmatoarele comenzi:
+     
+          systemctl daemon system reload
+          systemctl list-units --type=service #pentru a vedea serviciile care ruleaza in momentul curent
+          systemctl start/stop/restart tema1.service
+          systemctl status tema1.service
+          
+Pentru a porni la startup:
+          
+          systemctl enable tema1.service
