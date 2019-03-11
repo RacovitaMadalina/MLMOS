@@ -17,7 +17,7 @@ echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomai
 operation_status= hostname $desired_hostname
 
 if $opearation_status; then
-	echo "The hostname was set successfully to $1.localdomain"
+	echo "The hostname was set successfully to $desired_hostname"
 else
 	echo "Failure during hostname setup"
 fi
