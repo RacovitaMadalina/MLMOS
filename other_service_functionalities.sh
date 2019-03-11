@@ -3,12 +3,12 @@
 # setting the hostname for the virtual machine
 # sudo su
 
-ifup enp0s8
-ifup enp0s3
+# ifup enp0s8
+# ifup enp0s3
 
 hostname="localhost.localdomain"
 
-desired_hostname="madlina"
+desired_hostname="madalina"
 desired_hostname="$desired_hostname.localdomain"
 echo $desired_hostname
 
