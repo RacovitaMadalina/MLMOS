@@ -62,7 +62,7 @@
 
     		operation_status= replace_key_value_pair "SELINUX" "=" "disabled" /etc/selinux/config
    	 	operation_status=$operation_status && setenforce 0
-    		operation_status= replace_key_value_pair "SELINUX" "=" "enforcing" /etc/selinux/conf
+    		operation_status= replace_key_value_pair "SELINUX" "=" "enforcing" /etc/selinux/config
    		return $operation_status
 	}
 
