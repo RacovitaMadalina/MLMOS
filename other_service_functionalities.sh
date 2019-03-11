@@ -3,8 +3,8 @@
 # setting the hostname for the virtual machine
 # sudo su
 
-ifup enp0s8
-ifup enp0s3
+#ifup enp0s8
+#ifup enp0s3
 
 hostname="localhost.localdomain"
 
@@ -35,6 +35,4 @@ cd ~/$new_dirname
 eval `ssh-agent` | ssh-add /etc/ssh/id_rsa_git | git clone git@github.com:RacovitaMadalina/MLMOS.git
 
 #executing the script bootstrap.sh
-cd ~/$new_dirname/MLMOS
-chmod u-x bootstrap.sh
-bash bootstrap.sh
+bash /root/$new_dirname/bootstrap.sh
