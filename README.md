@@ -24,6 +24,7 @@ Pentru a testa daca functioneaza:
 Pentru a clona repo-ul de git via ssh: 
 
      git clone git@github.com:RacovitaMadalina/MLMOS.git
+     sau:  ssh-agent bash -c 'ssh-add /etc/ssh/id_rsa_git; git clone git@github.com:RacovitaMadalina/MLMOS.git'
      
 Cheia publica se va afla de asemenea si in:
 
