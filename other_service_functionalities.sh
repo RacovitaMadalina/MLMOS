@@ -8,12 +8,12 @@
 
 hostname="localhost.localdomain"
 
-desired_hostname="madalina"
-desired_hostname="$desired_hostname.localdomain"
+base_name="madalina"
+desired_hostname="$base_name.localdomain"
 echo $desired_hostname
 
 echo "HOSTNAME=$desired_hostname" > /etc/sysconfig/network
-echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 $1 $desired_hostname" > /etc/hosts
+echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 $base_name $desired_hostname" > /etc/hosts
 operation_status= hostname $desired_hostname
 
 if $opearation_status; then
