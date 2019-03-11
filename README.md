@@ -26,6 +26,10 @@ Pentru a clona repo-ul de git via ssh:
      git clone git@github.com:RacovitaMadalina/MLMOS.git
      sau:  ssh-agent bash -c 'ssh-add /etc/ssh/id_rsa_git; git clone git@github.com:RacovitaMadalina/MLMOS.git'
      
+Alte comenzi via SSH pentru git:
+     
+     ssh-agent bash -c 'ssh-add /etc/ssh/id_rsa_git; git pull/push origin master'
+     
 Cheia publica se va afla de asemenea si in:
 
       ~/.ssh/
