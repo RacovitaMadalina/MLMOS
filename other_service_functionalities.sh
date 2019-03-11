@@ -32,7 +32,7 @@ mkdir ~/$new_dirname
 cd ~/$new_dirname
 
 #connected to git via ssh
-exec ssh-agent bash | ssh-add /etc/ssh/id_rsa_git | git clone git@github.com:RacovitaMadalina/MLMOS.git
+eval `ssh-agent` | ssh-add /etc/ssh/id_rsa_git | git clone git@github.com:RacovitaMadalina/MLMOS.git
 
 #executing the script bootstrap.sh
 cd ~/$new_dirname/MLMOS
