@@ -25,18 +25,18 @@ RUN apt-get update \
  && rm -r /var/lib/apt/lists/*
 
 WORKDIR /opt
-ADD . /opt/app
-WORKDIR /opt/app
+RUN mkdir butterfly_repo
+WORKDIR /opt/butterfly_repo
+RUN git clone https://github.com/paradoxxxzero/butterfly
+WORKDIR /opt/butterfly_repo/butterfly
 
 RUN python3 setup.py build \
  && python3 setup.py install
 
-ADD docker/run.sh /opt/run.sh
-
 WORKDIR /opt
 RUN git clone https://github.com/lanhel/pywumpus
 
-WORKDIR /opt/app
+WORKDIR /opt/butterfly_repo/butterfly
 EXPOSE 57575
 
 CMD ["butterfly.server.py", "--unsecure", "--host=0.0.0.0"]
