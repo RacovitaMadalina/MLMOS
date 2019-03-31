@@ -1,16 +1,20 @@
-Documentation second homewok
+**Documentation second homewok
 
 Task: Ne dorim să oferim posibilitatea pasionaților de jocuri vechi – în linia de comandă, de exemplu Hunt the Wumpus – să poată juca unul dintre aceste jocuri într-un browser. În acest scop va trebui să pregătiți o imagine de docker care să conțină un server web care să expună jocul ales de voi.
 
-First step: Clone the repository https://github.com/paradoxxxzero/butterfly:
+**First step: 
+    
+  Clone the repository https://github.com/paradoxxxzero/butterfly:
     
     git clone https://github.com/paradoxxxzero/butterfly
    
-Second step: In the folder where the repo has been cloned in the previous step, replace the Dockerfile from the root, with the Dockerfile in this repository. The Dockerfile installs the necessary dependecies for running the butterfly in a web browser. 
+**Second step: 
 
-Butterfly uses python packeges like tornado that requieres a python version >= 3.6. The initial Dockerfile from paradoxxxzero's repository installs python 2.7 (when we will run the docker image this will fail with a syntax error if the python version will remain 2.7)
+  In the folder where the repo has been cloned in the previous step, replace the Dockerfile from the root, with the Dockerfile in this repository. The Dockerfile installs the necessary dependecies for running the butterfly in a web browser. 
 
-That's why I have installed python3.6, after that I removed from the initial Dockerfile the unnecessary commands for installing python, pip and I addapted the rest.
+  Butterfly uses python packeges like tornado that requieres a python version >= 3.6. The initial Dockerfile from paradoxxxzero's repository installs python 2.7 (when we will run the docker image this will fail with a syntax error if the python version will remain 2.7)
+
+  That's why I have installed python3.6, after that I removed from the initial Dockerfile the unnecessary commands for installing python, pip and I addapted the rest.
 
 After that, I cloned a repo with the wumpus game implemented in pyhthon 3.6: 
 
@@ -38,5 +42,5 @@ If a password is required, type 'password'.
 
 Now, access the game:
   
-    cd /opt/pywumpus
+    cd ../opt/pywumpus
     python3 pywumpus.py
