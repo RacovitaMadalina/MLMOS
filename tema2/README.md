@@ -2,19 +2,25 @@
 
 Task: Ne dorim să oferim posibilitatea pasionaților de jocuri vechi – în linia de comandă, de exemplu Hunt the Wumpus – să poată juca unul dintre aceste jocuri într-un browser. În acest scop va trebui să pregătiți o imagine de docker care să conțină un server web care să expună jocul ales de voi.
 
-**First step: 
+DOCKERFILE CONTENT STEPS:
+
+**First step:
+    
+   Install dependencies. Configure the environment of the docker container.
+
+**Second step: 
     
   Clone the repository https://github.com/paradoxxxzero/butterfly:
     
     git clone https://github.com/paradoxxxzero/butterfly
    
-**Second step: 
+**Third step: 
 
-  In the folder where the repo has been cloned in the previous step, replace the Dockerfile from the root, with the Dockerfile in this repository. The Dockerfile installs the necessary dependecies for running the butterfly in a web browser. 
+  In the folder where the repo has been cloned in the previous step, there is a Dockerfile but it is not a good one. Why?
 
-  Butterfly uses python packeges like tornado that requieres a python version >= 3.6. The initial Dockerfile from paradoxxxzero's repository installs python 2.7 (when we will run the docker image this will fail with a syntax error if the python version will remain 2.7)
+  Butterfly uses python packages like tornado that requieres a python version >= 3.6. The initial Dockerfile from paradoxxxzero's repository installs python 2.7 (when we will run the docker image this will fail with a syntax error if the python version will remain 2.7)
 
-  That's why I have installed python3.6, after that I removed from the initial Dockerfile the unnecessary commands for installing python, pip and I addapted the rest.
+  That's why I have installed python3.6, after that I removed from the initial Dockerfile the unnecessary commands for installing python, pip and I addapted the rest. The Dockerfile installs the necessary dependecies for running the butterfly in a web browser. 
 
 After that, I cloned a repo with the wumpus game implemented in pyhthon 3.6: 
 
@@ -22,7 +28,9 @@ After that, I cloned a repo with the wumpus game implemented in pyhthon 3.6:
 
 The game will be located in /opt/pywumpus.
 
-For building the docker image, the following command will construct a docker image from the entire directory that will have the alias 'butterfly-terminal':
+HOW TO USE IT?
+
+Clone this repo. For building the docker image, the following command will construct a docker image from the entire directory that will have the alias 'butterfly-terminal':
 
     docker build -t butterfly-terminal .
 
