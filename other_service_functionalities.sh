@@ -1,19 +1,23 @@
 #!/bin/bash
 
 # setting the hostname for the virtual machine
-sudo su
+# sudo su
+
+ifup enp0s8
+ifup enp0s3
+
 hostname="localhost.localdomain"
 
-desired_hostname="madlina"
-desired_hostname="$desired_hostname.localdomain"
+base_name="hostname1"
+desired_hostname="$base_name.localdomain"
 echo $desired_hostname
 
 echo "HOSTNAME=$desired_hostname" > /etc/sysconfig/network
-echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 $1 $desired_hostname" > /etc/hosts
+echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4 $base_name $desired_hostname" > /etc/hosts
 operation_status= hostname $desired_hostname
 
 if $opearation_status; then
-	echo "The hostname was set successfully to $1.localdomain"
+	echo "The hostname was set successfully to $desired_hostname"
 else
 	echo "Failure during hostname setup"
 fi
@@ -28,9 +32,7 @@ mkdir ~/$new_dirname
 cd ~/$new_dirname
 
 #connected to git via ssh
-exec ssh-agent bash | ssh-add /etc/ssh/id_rsa_git | git clone git@github.com:RacovitaMadalina/MLMOS.git
+ssh-agent bash -c 'ssh-add /etc/ssh/id_rsa_git; git clone git@github.com:RacovitaMadalina/MLMOS.git'
 
 #executing the script bootstrap.sh
-cd ~/$new_dirname/MLMOS
-chmod u-x bootstrap.sh
-bash bootstrap.sh
+bash /root/$new_dirname/MLMOS/bootstrap.sh

@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=single
-ExecStart=/root/MLMOS/other_service_functionalities.sh
+ExecStart=/bin/bash /root/MLMOS/other_service_functionalities.sh
 
 [Install]
 WantedBy=multi-user.target
